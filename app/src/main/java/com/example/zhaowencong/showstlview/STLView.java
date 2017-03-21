@@ -15,6 +15,8 @@ import com.example.zhaowencong.showstlview.stlbean.STLObject;
 import com.example.zhaowencong.showstlview.util.IOUtils;
 import com.example.zhaowencong.showstlview.util.Log;
 
+import static java.lang.Math.sqrt;
+
 public class STLView extends GLSurfaceView {
 
 	private STLRenderer stlRenderer;
@@ -55,7 +57,7 @@ public class STLView extends GLSurfaceView {
 		return stlBytes;
 	}
 
-	//这里将偏移数值降低  
+	//这里将偏移数值降低
 	private final float TOUCH_SCALE_FACTOR = 180.0f / 320/2;
 	private float previousX;
 	private float previousY;
@@ -210,11 +212,10 @@ public class STLView extends GLSurfaceView {
 		  try {  
 			  x = event.getX(0) - event.getX(1);
 			  y = event.getY(0) - event.getY(1); 
-		    } catch (IllegalArgumentException e) {  
-		        // TODO Auto-generated catch block  
+		    } catch (IllegalArgumentException e) {
 		        e.printStackTrace();  
 		    } 
-		return android.util.FloatMath.sqrt(x * x + y * y);
+		return (float)sqrt(x * x + y * y);
 	}
 
 	/**

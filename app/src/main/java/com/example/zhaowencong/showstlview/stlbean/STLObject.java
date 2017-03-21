@@ -29,9 +29,9 @@ import java.util.Map;
  */
 public class STLObject  {
 	private byte[] stlBytes = null;
-	List<Float> normalList;
-	FloatBuffer triangleBuffer;
-	FloatBuffer normalBuffer;
+	private List<Float> normalList;
+	private FloatBuffer triangleBuffer;
+	private FloatBuffer normalBuffer;
 	
 	private int normalsize;
 	
